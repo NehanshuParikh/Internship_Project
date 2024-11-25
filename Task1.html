@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Topics</title>
+  <style>
+    /* General Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Top Section */
+    .browse-topics {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #fff;
+    }
+
+    .browse-topics h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .categories button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: grey;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .categories button.active {
+      color: black;
+      border-bottom: 2px solid black;
+    }
+
+    .categories button:hover {
+      color: black;
+    }
+
+    /* Cards Section */
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 80px;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .card span {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      padding: 0.3rem 0.6rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+ .how-it-works {
+  padding: 4rem 2rem; /* Adds enough padding */
+  background: linear-gradient(90deg, #1e3c72, #2a5298); /* Linear blue gradient */
+  color: white;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.steps {
+  display: flex;
+  justify-content: center; /* Align steps horizontally */
+  align-items: center; /* Align steps vertically */
+  gap: 2rem;
+  flex-direction: column;
+  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 1.5rem; 
+  background: rgba(255, 255, 255, 0.1); /* Slightly transparent background for steps */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  max-width: 100vw;
+  min-width: 90vw;
+}
+
+.step:hover {
+  transform: translateY(-5px); /* Adds hover effect */
+}
+
+.step img {
+  width: 40px; /* Icon size */
+  margin-bottom: 1rem;
+}
+
+.step-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-content p {
+  font-size: 0.9rem;
+  color: #e0e0e0; /* Softer white for text */
+}
+
+.footer {
+  margin-top: 2rem;
+}
+
+.footer p {
+  font-size: 1rem;
+}
+
+.footer a {
+  color: #ffd700; /* Gold color for link */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+  <section class="browse-topics">
+    <h1>Browse Topics</h1>
+    <div class="categories">
+      <button class="active" onclick="showContent('design')">Design</button>
+      <button onclick="showContent('marketing')">Marketing</button>
+      <button onclick="showContent('finance')">Finance</button>
+      <button onclick="showContent('music')">Music</button>
+      <button onclick="showContent('education')">Education</button>
+    </div>
+  </section>
+
+  <section class="card-container" id="content">
+    <!-- Initial Content -->
+    <div class="card">
+      <img src="https://via.placeholder.com/80" alt="Web Design">
+      <h3>Web Design</h3>
+      <p>Topic Listing Template based on Bootstrap 5</p>
+      <span>14</span>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/80" alt="Graphic Design">
+      <h3>Graphic</h3>
+      <p>Lorem ipsum dolor sit amet consectetur</p>
+      <span>75</span>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/80" alt="Logo Design">
+      <h3>Logo Design</h3>
+      <p>Lorem ipsum dolor sit amet consectetur</p>
+      <span>100</span>
+    </div>
+  </section>
+    <section class="how-it-works">
+    <h2>How does it work?</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="https://via.placeholder.com/40" alt="Search">
+        <div class="step-content">
+          <h4>Search your favourite topic</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="https://via.placeholder.com/40" alt="Bookmark">
+        <div class="step-content">
+          <h4>Bookmark & Keep it for yourself</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="https://via.placeholder.com/40" alt="Read">
+        <div class="step-content">
+          <h4>Read & Enjoy</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Want to learn more? <a href="#">Check out YouTube</a></p>
+    </div>
+  </section>
+
+  <script>
+    const categories = document.querySelectorAll('.categories button');
+    const content = document.getElementById('content');
+
+    function showContent(category) {
+      // Remove active class from all buttons
+      categories.forEach(button => button.classList.remove('active'));
+
+      // Add active class to the clicked button
+      const activeButton = Array.from(categories).find(
+        btn => btn.textContent.toLowerCase() === category
+      );
+      activeButton.classList.add('active');
+
+      // Change content dynamically
+      let htmlContent = '';
+      switch (category) {
+        case 'design':
+          htmlContent = `
+            <div class="card">
+              <img src="https://via.placeholder.com/80" alt="Web Design">
+              <h3>Web Design</h3>
+              <p>Topic Listing Template based on Bootstrap 5</p>
+              <span>14</span>
+            </div>
+            <div class="card">
+              <img src="https://via.placeholder.com/80" alt="Graphic Design">
+              <h3>Graphic</h3>
+              <p>Lorem ipsum dolor sit amet consectetur</p>
+              <span>75</span>
+            </div>
+            <div class="card">
+              <img src="https://via.placeholder.com/80" alt="Logo Design">
+              <h3>Logo Design</h3>
+              <p>Lorem ipsum dolor sit amet consectetur</p>
+              <span>100</span>
+            </div>`;
+          break;
+        case 'marketing':
+          htmlContent = `
+            <div class="card">
+              <img src="https://via.placeholder.com/80" alt="SEO">
+              <h3>SEO</h3>
+              <p>Optimize your website for search engines</p>
+              <span>42</span>
+            </div>
+            <div class="card">
+              <img src="https://via.placeholder.com/80" alt="Social Media">
+              <h3>Social Media</h3>
+              <p>Grow your audience with social platforms</p>
+              <span>88</span>
+            </div>`;
+          break;
+        case 'finance':
+          htmlContent = `
+            <div class="card">
+              <img src="https://via.placeholder.com/80" alt="Investments">
+              <h3>Investments</h3>
+              <p>Learn the art of investing smartly</p>
+              <span>56</span>
+            </div>`;
+          break;
+        case 'music':
+          htmlContent = `
+            <div class="card">
+              <img src="https://via.placeholder.com/80" alt="Guitar">
+              <h3>Guitar Lessons</h3>
+              <p>Master your favorite instrument</p>
+              <span>19</span>
+            </div>`;
+          break;
+        case 'education':
+          htmlContent = `
+            <div class="card">
+              <img src="https://via.placeholder.com/80" alt="Learning">
+              <h3>Learning Techniques</h3>
+              <p>Improve your learning efficiency</p>
+              <span>78</span>
+            </div>`;
+          break;
+      }
+      content.innerHTML = htmlContent;
+    }
+  </script>
+</body>
+</html>
